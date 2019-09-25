@@ -1,4 +1,4 @@
-# GitHub Action -- Releases API
+# GitHub Action - Releases API
 This GitHub Action (written in JavaScript) wraps the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Upload a Release Asset](https://developer.github.com/v3/repos/releases/#upload-a-release-asset) endpoint, to allow you to leverage GitHub Actions to upload release assets.
 
 <a href="https://github.com/actions/upload-release-asset"><img alt="GitHub Actions status" src="https://github.com/actions/upload-release-asset/workflows/Upload%20Release%20Asset/badge.svg"></a>
