@@ -45,7 +45,20 @@ describe('Upload Release Asset', () => {
     });
   });
 
-  test('Outputs are set', async () => {});
+  test('Output is set', async () => {
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce('upload_url')
+      .mockReturnValueOnce('asset_path')
+      .mockReturnValueOnce('asset_name')
+      .mockReturnValueOnce('asset_content_type');
+
+    core.setOutput = jest.fn();
+
+    await run();
+
+    expect(core.setOutput).toHaveBeenNthCalledWith(1, 'browser_download_url', 'browserDownloadUrl');
+  });
 
   test('Action fails elegantly', async () => {
     core.getInput = jest
