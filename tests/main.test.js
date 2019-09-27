@@ -12,7 +12,11 @@ describe('Upload Release Asset', () => {
   let uploadReleaseAsset;
 
   beforeEach(() => {
-    uploadReleaseAsset = jest.fn();
+    uploadReleaseAsset = jest.fn().mockReturnValueOnce({
+      data: {
+        browser_download_url: 'browserDownloadUrl'
+      }
+    });
 
     fs.statSync = jest.fn().mockReturnValueOnce({
       size: 527
