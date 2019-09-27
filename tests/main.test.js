@@ -46,4 +46,28 @@ describe('Upload Release Asset', () => {
   });
 
   test('Outputs are set', async () => {});
+
+  test('Action fails elegantly', async () => {
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce('upload_url')
+      .mockReturnValueOnce('asset_path')
+      .mockReturnValueOnce('asset_name')
+      .mockReturnValueOnce('asset_content_type');
+
+    uploadReleaseAsset.mockRestore();
+    uploadReleaseAsset.mockImplementation(() => {
+      throw new Error('Error uploading release asset');
+    });
+
+    core.setOutput = jest.fn();
+
+    core.setFailed = jest.fn();
+
+    await run();
+
+    expect(uploadReleaseAsset).toHaveBeenCalled();
+    expect(core.setFailed).toHaveBeenCalledWith('Error uploading release asset');
+    expect(core.setOutput).toHaveBeenCalledTimes(0);
+  });
 });
