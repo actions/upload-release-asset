@@ -5,7 +5,7 @@ jest.mock('fs');
 const core = require('@actions/core');
 const { GitHub, context } = require('@actions/github');
 const fs = require('fs');
-const run = require('../src/main.js');
+const run = require('../src/upload-release-asset');
 
 /* eslint-disable no-undef */
 describe('Upload Release Asset', () => {

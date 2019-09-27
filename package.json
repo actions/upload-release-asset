@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint 'src/**.js' 'tests/**.js' --fix",
-    "test": "eslint 'src/**.js' 'tests/**.js' --fix && jest",
+    "test": "eslint 'src/**.js' 'tests/**.js' && jest --coverage",
     "build": "ncc build src/main.js",
     "precommit": "npm run build && git add dist/"
   },
@@ -41,7 +41,7 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "src/main.js"
+      "src/upload-release-asset.js"
     ],
     "coverageThreshold": {
       "global": {
