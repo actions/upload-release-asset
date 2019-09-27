@@ -36,12 +36,21 @@ describe('Upload Release Asset', () => {
     GitHub.mockImplementation(() => github);
   });
 
-  test('Upload release endpoint is called', async () => {
+  test('Upload release asset endpoint is called', async () => {
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce('upload_url')
+      .mockReturnValueOnce('asset_path')
+      .mockReturnValueOnce('asset_name')
+      .mockReturnValueOnce('asset_content_type');
+
     await run();
 
     expect(uploadReleaseAsset).toHaveBeenCalledWith({
-      owner: 'owner',
-      repo: 'repo'
+      url: 'upload_url',
+      headers: { 'content-type': 'asset_content_type', 'content-length': 527 },
+      name: 'asset_name',
+      file: 'asset_path'
     });
   });
 
