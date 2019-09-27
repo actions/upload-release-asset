@@ -1,14 +1,22 @@
+jest.mock('@actions/core');
 jest.mock('@actions/github');
+jest.mock('fs');
 
+const core = require('@actions/core');
 const { GitHub, context } = require('@actions/github');
+const fs = require('fs');
 const run = require('../src/main.js');
 
 /* eslint-disable no-undef */
-describe('module', () => {
+describe('Upload Release Asset', () => {
   let uploadReleaseAsset;
 
   beforeEach(() => {
     uploadReleaseAsset = jest.fn();
+
+    fs.statSync = jest.fn().mockReturnValueOnce({
+      size: 527
+    });
 
     context.repo = {
       owner: 'owner',
