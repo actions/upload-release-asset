@@ -19,7 +19,7 @@ For more information on these outputs, see the [API Documentation](https://devel
 - `browser_download_url`: The URL users can navigate to in order to download the release asset. i.e. `https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip`
 
 ### Example workflow - upload a release asset
-On every `push` to a tag matching the pattern `v*`, [create a release](https://developer.github.com/v3/repos/releases/#create-a-release) and [upload a release asset](https://developer.github.com/v3/repos/releases/#upload-a-release-asset). This Workflow example assumes you have the `[@actions/create-release](https://www.github.com/actions/create-release) Action in a previous step:
+On every `push` to a tag matching the pattern `v*`, [create a release](https://developer.github.com/v3/repos/releases/#create-a-release) and [upload a release asset](https://developer.github.com/v3/repos/releases/#upload-a-release-asset). This Workflow example assumes you have the `[@actions/create-release](https://www.github.com/actions/create-release)` Action in a previous step:
 
 ```yaml
 on:
