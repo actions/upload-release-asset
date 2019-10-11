@@ -11,7 +11,7 @@ const run = require('../src/upload-release-asset');
 describe('Upload Release Asset', () => {
   let uploadReleaseAsset;
   let content;
-  
+
   beforeEach(() => {
     uploadReleaseAsset = jest.fn().mockReturnValueOnce({
       data: {
@@ -22,7 +22,7 @@ describe('Upload Release Asset', () => {
     fs.statSync = jest.fn().mockReturnValueOnce({
       size: 527
     });
-    
+
     content = Buffer.from('test content');
     fs.readFileSync = jest.fn().mockReturnValueOnce(content);
 
@@ -54,7 +54,7 @@ describe('Upload Release Asset', () => {
       url: 'upload_url',
       headers: { 'content-type': 'asset_content_type', 'content-length': 527 },
       name: 'asset_name',
-      file: content,
+      file: content
     });
   });
 
