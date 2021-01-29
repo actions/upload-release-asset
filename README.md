@@ -1,4 +1,20 @@
 # GitHub Action - Releases API
+
+**Please note:** This repository is currently unmaintained by a team of developers at GitHub. The 
+repository is here and you can use it as an example, or in Actions. However please be aware that 
+we are not going to be updating issues or pull requests on this repository.
+
+**Maintained forks:**
+* ...
+
+To reflect this state we’ve marked this repository as Archived.
+
+If you are having an issue or question about GitHub Actions then please [contact customer support](https://help.github.com/en/articles/about-github-actions#contacting-support).
+
+If you have found a security issue [please submit it here](https://hackerone.com/github).
+
+---
+
 This GitHub Action (written in JavaScript) wraps the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Upload a Release Asset](https://developer.github.com/v3/repos/releases/#upload-a-release-asset) endpoint, to allow you to leverage GitHub Actions to upload release assets.
 
 <a href="https://github.com/actions/upload-release-asset"><img alt="GitHub Actions status" src="https://github.com/actions/upload-release-asset/workflows/Tests/badge.svg"></a>
